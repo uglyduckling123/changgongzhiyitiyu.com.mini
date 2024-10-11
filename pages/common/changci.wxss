@@ -97,12 +97,33 @@
   line-height: 60rpx;
   padding: 0;
 }
+
 .main .time_box .time_boxP .scroll-view-item_HU .host_list button {
   border-radius: 0;
   height: 60rpx;
   border: 0.5px solid #fff;
   line-height: 60rpx;
 }
+.main .time_box .time_boxP .scroll-view-item_HU .host_list button {
+  border-radius: 0;
+  height: 60rpx;
+  border: 0.5px solid #fff;
+  line-height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10rpx;
+  font-size: 24rpx;  /* 调整字体大小以适应按钮 */
+}
+
+.main .time_box .time_boxP .scroll-view-item_HU .host_list button .price {
+  margin-right: 5rpx;  /* 为图标留出空间 */
+}
+
+.main .time_box .time_boxP .scroll-view-item_HU .host_list button u-icon {
+  flex-shrink: 0;
+}
+
 .main .time_box .time_boxP .scroll-view-item_HU .host_list .hui {
   background-color: #ccd0d3;
   pointer-events: none;

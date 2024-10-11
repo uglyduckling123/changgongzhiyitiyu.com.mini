@@ -277,7 +277,9 @@ var _default = {
           user_info.money = res.data.userInfo.money;
           user_info.member_type = res.data.userInfo.member_type;
           _this.data = user_info;
-          uni.setStorageSync('user', user_info);
+          //uni.setStorageSync('user', user_info);
+          console.log('my_js:22222');
+          console.log(user_info);
         } else {
           console.log(res);
         }

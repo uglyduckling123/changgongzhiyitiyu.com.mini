@@ -34583,6 +34583,7 @@ function request(params) {
     });
   }
   var token = uni.getStorageSync('user').token;
+
   return new Promise(function (resolve, reject) {
     uni.request({
       url: _index.BASE_URL + '/api' + url,

@@ -105,6 +105,9 @@ try {
     uIcon: function () {
       return __webpack_require__.e(/*! import() | uview-ui/components/u-icon/u-icon */ "uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-icon/u-icon.vue */ 195))
     },
+    uField: function () {
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-field/u-field */ "uview-ui/components/u-field/u-field").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-field/u-field.vue */ 254))
+    },
     uCalendar: function () {
       return __webpack_require__.e(/*! import() | uview-ui/components/u-calendar/u-calendar */ "uview-ui/components/u-calendar/u-calendar").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-calendar/u-calendar.vue */ 261))
     },
@@ -200,72 +203,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/run
 var _data$created$methods;
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 var _default = (_data$created$methods = {
   data: function data() {
     return {
+      tanchu:false,
       banner: [],
       id: [],
       show: false,
@@ -277,7 +219,11 @@ var _default = (_data$created$methods = {
       data1: [],
       index: 1,
       indexp: '',
-      itemName: ''
+      itemName: '',
+      user_name:'',
+      identification:'',
+      mobile:'',
+      address:'',
     };
   },
   created: function created() {
@@ -300,9 +246,97 @@ var _default = (_data$created$methods = {
         url: '/pages/tabBar/home'
       });
     },
+    e0 : function ($event) {
+      this.tanchu = false
+    },
+    qued: function qued() {
+      var _this3 = this;
+      if (this.name == "") {
+        uni.showToast({
+          title: "姓名不能为空！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      } else if (this.mobile == "") {
+        uni.showToast({
+          title: "手机号不能为空！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      } else if (this.address == "") {
+        uni.showToast({
+          title: "社区不能为空！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      } else if (this.identification == "") {
+        uni.showToast({
+          title: "身份证不能为空！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      }
+      var phoneReg = /(^1\d{10}$)|(^[0-9]\d{7}$)/;
+      if (!phoneReg.test(this.mobile)) {
+        uni.showToast({
+          title: "手机格式不正确！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      }
+      var idCardPattern = /^(?:\d{15}|\d{17}[\dX])$/;
+      if (!idCardPattern.test(this.identification)) {
+        uni.showToast({
+          title: "身份证格式不正确！",
+          icon: "error",
+          duration: 2000
+        });
+        return;
+      }
+
+      var obj = {
+        user_name: this.user_name,
+        mobile: this.mobile,
+        address: this.address,
+        identification: this.identification
+      };
+      var user_info = uni.getStorageSync("user");
+      if(obj.mobile != user_info.mobile){
+        uni.showToast({
+          title: "非登陆手机号",
+          icon: "error",
+          duration: 2000
+        });
+        console.log("no valid mobile",user_info.mobile,obj.mobile);
+        return;
+      }
+      //this.arrList.push(obj);
+      uni.showToast({
+        title: "添加成功！",
+        duration: 2000
+      });
+      uni.setStorageSync('user_reservation_info', obj);
+      setTimeout(function () {
+        _this3.tanchu = false;
+        _this3.user_name = "";
+        _this3.mobile = "";
+        _this3.address = "";
+        _this3.identification = "";
+      }, 900);
+    },
     goList: function goList() {
       var now = new Date().getHours();
-      // let user = uni.getStorageSync('user')
+      var  reservationInfo = uni.getStorageSync('user_reservation_info');
+      if(!reservationInfo){
+        console.log("no valid reservationInfo");
+        this.tanchu = true;
+        return;
+      }
       var user;
       this.$api({
         url: '/user/getUserinfo',
@@ -406,10 +440,10 @@ var _default = (_data$created$methods = {
   }).then(function (res) {
     if (res.code == 200) {
       user = res.data.userInfo;
-      uni.setStorageSync('user', res.data.userInfo);
-      console.log(res.data.userInfo, '111');
+      console.log(res.data.userInfo);
     }
   });
+
   this.data1.map(function (item, index) {
     item.id = index + 1;
     return item;

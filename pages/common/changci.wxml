@@ -1,1 +1,123 @@
-<view class="main"><scroll-view class="scroll-view_H" scroll-x="true" data-event-opts="{{[['scroll',[['scroll',['$event']]]]]}}" bindscroll="__e"><block wx:for="{{data1}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['active_item',[index+1,'$0'],[[['data1','',index]]]]]]]}}" class="{{[date_label==index+1?'scroll-view-item_H active_scroll':'scroll-view-item_H']}}" style="{{(item.date==time?'border-bottom: 3px solid #1f9244;':'')}}" bindtap="__e"><view>{{''+item.date+''}}</view><view>{{''+item.week+''}}</view></view></block></scroll-view><view class="time_box"><view class="time"><view></view><view>07:00-</view><view>08:00-</view><view>09:00-</view><view>10:00-</view><view>11:00-</view><view>12:00-</view><view>13:00-</view><view>14:00-</view><view>15:00-</view><view>16:00-</view><view>17:00-</view><view>18:00-</view><view>19:00-</view><view>20:00-</view><view>21:00-21:30-</view></view><view class="time_boxP"><scroll-view class="scroll-view_HU" scroll-x="true"><block wx:for="{{dataChangguan}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="scroll-view-item_HU" id="demo1"><view class="host_list"><view class="changdi_top">{{''+item.seat_name+''}}</view><view class="btns"><block wx:for="{{item.label}}" wx:for-item="list" wx:for-index="indexs" wx:key="indexs"><button data-event-opts="{{[['tap',[['clocrIndex',['$0','$1',indexs],[[['dataChangguan','',index]],[['dataChangguan','',index],['label','',indexs]]]]]]]}}" class="{{[list.status==0?'green':list.status==1?'hui':list.status==2?'red':list.status==3&&isShow&&list.is_real==1?'green':'hui']}}" style="{{(list.flge==true?'background-color: #FF822E;':'')}}" bindtap="__e"><u-icon style="{{(list.status!=2?'opacity: 0;':'')}}" vue-id="{{'67664776-1-'+index+'-'+indexs}}" name="checkbox-mark" color="#fff" bind:__l="__l"></u-icon></button></block></view></view></view></block></scroll-view></view></view><view class="bottom"><view class="btn_host"><view class="one"><view></view><label class="_span">已预订</label></view><view class="two"><view></view><label class="_span">可预约</label></view><view class="three"><view></view><label class="_span">已选择</label></view><view class="four"><view><u-icon vue-id="67664776-2" name="checkbox-mark" color="#fff" bind:__l="__l"></u-icon></view><label class="_span">我的预订</label></view></view><view class="tis">{{''+tis+''}}</view><button data-event-opts="{{[['tap',[['goyuyue',['$event']]]]]}}" bindtap="__e">提交订单</button></view></view>
+<view class="main">
+    <scroll-view class="scroll-view_H" scroll-x="true" data-event-opts="{{[['scroll',[['scroll',['$event']]]]]}}" bindscroll="__e">
+        <block wx:for="{{data1}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view data-event-opts="{{[['tap',[['active_item',[index+1,'$0'],[[['data1','',index]]]]]]]}}" class="{{[date_label==index+1?'scroll-view-item_H active_scroll':'scroll-view-item_H']}}" style="{{(item.date==time?'border-bottom: 3px solid #1f9244;':'')}}" bindtap="__e">
+                <view>
+                    {{''+item.date+''}}
+                </view>
+                <view>
+                    {{''+item.week+''}}
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="time_box">
+        <view class="time">
+            <view></view>
+            <view>
+                07:00-
+            </view>
+            <view>
+                08:00-
+            </view>
+            <view>
+                09:00-
+            </view>
+            <view>
+                10:00-
+            </view>
+            <view>
+                11:00-
+            </view>
+            <view>
+                12:00-
+            </view>
+            <view>
+                13:00-
+            </view>
+            <view>
+                14:00-
+            </view>
+            <view>
+                15:00-
+            </view>
+            <view>
+                16:00-
+            </view>
+            <view>
+                17:00-
+            </view>
+            <view>
+                18:00-
+            </view>
+            <view>
+                19:00-
+            </view>
+            <view>
+                20:00-
+            </view>
+            <view>
+                21:00-21:30-
+            </view>
+        </view>
+        <view class="time_boxP">
+            <scroll-view class="scroll-view_HU" scroll-x="true">
+                <block wx:for="{{dataChangguan}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                    <view class="scroll-view-item_HU" id="demo1">
+                        <view class="host_list">
+                            <view class="changdi_top">
+                                {{''+item.seat_name+''}}
+                            </view>
+                            <view class="btns">
+                                <block wx:for="{{item.label}}" wx:for-item="list" wx:for-index="indexs" wx:key="indexs">
+                                    <button data-event-opts="{{[['tap',[['clocrIndex',['$0','$1',indexs],[[['dataChangguan','',index]],[['dataChangguan','',index],['label','',indexs]]]]]]]}}" class="{{[list.status==0?'green':list.status==1?'hui':list.status==2?'red':list.status==3&&isShow&&list.is_real==1?'green':'hui']}}" style="{{(list.flge==true?'background-color: #FF822E;':'')}}" bindtap="__e">
+                                        <view class="button-content">
+                                            <text class="price">￥{{list.member_price}}</text>
+                                            <u-icon style="{{(list.status!=2?'opacity: 0;':'')}}" vue-id="{{'67664776-1-'+index+'-'+indexs}}" name="checkbox-mark" color="#fff" bind:__l="__l"></u-icon>
+                                        </view>
+                                    </button>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="btn_host">
+            <view class="one">
+                <view></view>
+                <label class="_span">
+                    已预订
+                </label>
+            </view>
+            <view class="two">
+                <view></view>
+                <label class="_span">
+                    可预约
+                </label>
+            </view>
+            <view class="three">
+                <view></view>
+                <label class="_span">
+                    已选择
+                </label>
+            </view>
+            <view class="four">
+                <view>
+                    <u-icon vue-id="67664776-2" name="checkbox-mark" color="#fff" bind:__l="__l"></u-icon>
+                </view>
+                <label class="_span">
+                    我的预订
+                </label>
+            </view>
+        </view>
+        <view class="tis">
+            {{''+tis+''}}
+        </view>
+        <button data-event-opts="{{[['tap',[['goyuyue',['$event']]]]]}}" bindtap="__e">
+            提交订单
+        </button>
+    </view>
+</view>
