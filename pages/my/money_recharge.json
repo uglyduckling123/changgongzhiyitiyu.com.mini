@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "资金充值",
+  "usingComponents": {
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
+    "u-mask": "/uview-ui/components/u-mask/u-mask",
+    "u-parse": "/uview-ui/components/u-parse/u-parse"
+  }
+}

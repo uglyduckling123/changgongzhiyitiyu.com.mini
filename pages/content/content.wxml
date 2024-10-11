@@ -1,0 +1,1 @@
+<view class="main"><u-parse vue-id="23783768-1" html="{{content}}" bind:__l="__l"></u-parse><view class="footer"></view></view>

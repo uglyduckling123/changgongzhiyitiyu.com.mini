@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/tabBar/home",
+    "pages/tabBar/my",
+    "pages/tabBar/appointment",
+    "pages/index/index",
+    "pages/my/money_recharge",
+    "pages/my/profile",
+    "pages/common/appointment-common",
+    "pages/content/content",
+    "pages/common/comments",
+    "pages/common/xiangq",
+    "pages/common/changci",
+    "pages/my/funds_details",
+    "pages/common/list_defale",
+    "pages/common/webview"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "惠银123",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#B4B3B4",
+    "selectedColor": "#1F9244",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "position": "bottom",
+    "fontSize": "10px",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home",
+        "iconPath": "static/images/index_h.png",
+        "selectedIconPath": "static/images/index.png",
+        "text": "预约"
+      },
+      {
+        "pagePath": "pages/tabBar/my",
+        "iconPath": "static/images/my.png",
+        "selectedIconPath": "static/images/wode.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {},
+  "usingComponents": {}
+}

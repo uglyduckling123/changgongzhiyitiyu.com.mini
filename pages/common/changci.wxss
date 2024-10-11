@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* uni.scss */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.main {
+  background: #f8f8fa;
+  width: 100%;
+}
+.main .scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+.main .scroll-view_H ::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
+}
+.main .scroll-view-item {
+  height: 300rpx;
+  line-height: 300rpx;
+  text-align: center;
+  font-size: 25rpx;
+}
+.main .scroll-view-item_H {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  font-size: 25rpx;
+  border-right: 1px solid #dcdcdc;
+}
+.main .scroll-view-item_H view {
+  margin: 15rpx 0;
+}
+.main .active_scroll {
+  color: #000;
+  border-bottom: 3px solid #1f9244;
+}
+.main .time_box {
+  display: flex;
+}
+.main .time_box .time {
+  width: 13%;
+  padding-left: 20rpx;
+  font-size: 25rpx;
+  text-align: center;
+  background-color: #fff;
+}
+.main .time_box .time view {
+  height: 60rpx;
+}
+.main .time_box .time_boxP {
+  width: 87%;
+}
+.main .time_box .time_boxP .scroll-view_HU {
+  white-space: nowrap;
+  width: 100%;
+  height: 970rpx;
+}
+.main .time_box .time_boxP .scroll-view-itemU {
+  height: 300rpx;
+  line-height: 300rpx;
+  text-align: center;
+  font-size: 25rpx;
+}
+.main .time_box .time_boxP .scroll-view-item_HU {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-size: 20rpx;
+}
+.main .time_box .time_boxP .scroll-view-item_HU .host_list .changdi_top {
+  background-color: #fff;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0;
+}
+.main .time_box .time_boxP .scroll-view-item_HU .host_list button {
+  border-radius: 0;
+  height: 60rpx;
+  border: 0.5px solid #fff;
+  line-height: 60rpx;
+}
+.main .time_box .time_boxP .scroll-view-item_HU .host_list .hui {
+  background-color: #ccd0d3;
+  pointer-events: none;
+}
+.main .time_box .time_boxP .scroll-view-item_HU .host_list .green {
+  background-color: #49cf6a;
+}
+.main .time_box .time_boxP .scroll-view-item_HU .host_list .red {
+  background-color: #f9c325;
+  pointer-events: none;
+}
+.main .bottom {
+  width: 100%;
+  background-color: #fff;
+}
+.main .bottom .btn_host {
+  padding: 20rpx 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.main .bottom .btn_host .one {
+  display: flex;
+  align-items: center;
+}
+.main .bottom .btn_host .one view {
+  width: 70rpx;
+  background-color: #b8bbbf;
+  height: 30rpx;
+}
+.main .bottom .btn_host .two {
+  display: flex;
+  align-items: center;
+  margin: 0 15rpx;
+}
+.main .bottom .btn_host .two view {
+  width: 70rpx;
+  background-color: #209048;
+  height: 30rpx;
+}
+.main .bottom .btn_host .three {
+  display: flex;
+  align-items: center;
+}
+.main .bottom .btn_host .three view {
+  width: 70rpx;
+  background-color: #ff822e;
+  height: 30rpx;
+}
+.main .bottom .btn_host .four {
+  display: flex;
+  margin-left: 15rpx;
+  align-items: center;
+}
+.main .bottom .btn_host .four view {
+  width: 70rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #f9c325;
+  height: 30rpx;
+}
+.main .bottom .tis {
+  color: red;
+  margin: 20rpx 0;
+}
+.main .bottom button {
+  color: #fff;
+  border-radius: 0;
+  background-color: #49cf6a;
+}
+

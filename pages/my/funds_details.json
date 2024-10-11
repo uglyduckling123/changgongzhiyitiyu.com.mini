@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "资金明细",
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-picker": "/uview-ui/components/u-picker/u-picker",
+    "u-line": "/uview-ui/components/u-line/u-line",
+    "u-empty": "/uview-ui/components/u-empty/u-empty"
+  }
+}
