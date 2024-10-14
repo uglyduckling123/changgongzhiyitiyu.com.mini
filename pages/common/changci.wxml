@@ -14,47 +14,84 @@
     <view class="time_box">
         <view class="time">
             <view></view>
-            <view>
-                07:00-
-            </view>
+
             <view>
                 08:00-
+            </view>
+            <view>
+                08:30-
             </view>
             <view>
                 09:00-
             </view>
             <view>
+                09:30-
+            </view>
+            <view>
                 10:00-
+            </view>
+            <view>
+                10:30-
             </view>
             <view>
                 11:00-
             </view>
             <view>
+                11:30-
+            </view>
+            <view>
                 12:00-
+            </view>
+            <view>
+                12:30-
             </view>
             <view>
                 13:00-
             </view>
             <view>
+                13:30-
+            </view>
+            <view>
                 14:00-
+            </view>
+            <view>
+                14:30-
             </view>
             <view>
                 15:00-
             </view>
             <view>
+                15:30-
+            </view>
+            <view>
                 16:00-
+            </view>
+            <view>
+                16:30-
             </view>
             <view>
                 17:00-
             </view>
             <view>
+                17:30-
+            </view>
+            <view>
                 18:00-
+            </view>
+            <view>
+                18:30-
             </view>
             <view>
                 19:00-
             </view>
-            <view>
+             <view>
+                 19:30-
+             </view>
+           <view>
                 20:00-
+            </view>
+            <view>
+                20:30-
             </view>
             <view>
                 21:00-21:30-

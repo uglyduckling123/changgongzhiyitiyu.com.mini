@@ -348,13 +348,6 @@ var _default = (_data$created$methods = {
           console.log(res);
         }
       });
-      if (now <= 5 && user.member_type != 2) {
-        uni.showToast({
-          icon: 'error',
-          title: '24点-6点停止'
-        });
-        return;
-      }
       if (this.time == '') {
         this.$refs.uToast.show({
           title: '请选择日期！',
@@ -418,8 +411,12 @@ var _default = (_data$created$methods = {
     dsdd: function dsdd(e) {
       //拼接
       this.data1.splice(0); //请控之前的数据
-      for (var i = 0; i < e; i++) {
-        this.data1.push(this.getDay(i)); //-i 代表之前  i代表将来
+      var today = new Date();
+      var currentDay = today.getDay(); // 0 是周日，1 是周一，以此类推
+      var daysUntilSunday = currentDay === 0 ? 0 : -currentDay; // 如果今天是周日，差值为0，否则为负数
+
+      for (var i = currentDay; i < e; i++) {
+        this.data1.push(this.getDay(daysUntilSunday + i)); //-i 代表之前  i代表将来
       }
     }
   },

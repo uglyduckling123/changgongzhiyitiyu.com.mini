@@ -505,16 +505,6 @@ var _default = {
         this.postmakePlace();
         return;
       } else if (this.changguanList.is_pay == 0 || this.changguanList.is_show == 0) {
-        if (this.list.member_type != 2) {
-          if (this.arrList == "") {
-            uni.showToast({
-              title: "提示: 需填写订场人姓名 电话 居住社区，人数",
-              icon: "error",
-              duration: 2000
-            });
-            return;
-          }
-        }
         var obj = {
           place_id: this.changguanList.place_id,
           make_year: this.changguanList.make_year,
@@ -526,7 +516,8 @@ var _default = {
           is_pay: this.changguanList.is_pay,
           is_show: this.changguanList.is_show,
           is_gongyi: this.is_gongyi,
-          user_type: this.user_type
+          user_type: this.user_type,
+          make_place_new:true
         };
         this.$api({
           url: "/Place/makePlace",
@@ -581,7 +572,8 @@ var _default = {
           is_pay: this.changguanList.is_pay,
           is_show: this.changguanList.is_show,
           is_gongyi: this.is_gongyi,
-          user_type: this.user_type
+          user_type: this.user_type,
+          make_place_new:true
         };
         console.log(obj);
         this.$api({
@@ -612,7 +604,8 @@ var _default = {
           make_data: this.changguanList.make_data,
           is_pay: this.changguanList.is_pay,
           is_show: this.changguanList.is_show,
-          is_gongyi: 0
+          is_gongyi: 0,
+          make_place_new:true
         };
         var that = this;
         this.$api({

@@ -237,7 +237,7 @@ var _default = {
       }
     });
     this.$api({
-      url: "/Place/siteList?date=" + this.time + "&room=" + this.room + "&place_id=" + this.place_id + "&date_label=" + this.index,
+      url: "/Place/siteListNew?date=" + this.time + "&room=" + this.room + "&place_id=" + this.place_id + "&date_label=" + this.index,
       method: "get"
     }).then(function (res) {
       if (res.code == 200) {
@@ -261,7 +261,7 @@ var _default = {
         });
         setTimeout(function () {
           _this.$api({
-            url: "/Place/siteList?date=" + _this.getNowFormatDate() + "&room=" + _this.room + "&place_id=" + _this.place_id + "&date_label=" + "1",
+            url: "/Place/siteListNew?date=" + _this.getNowFormatDate() + "&room=" + _this.room + "&place_id=" + _this.place_id + "&date_label=" + "1",
             method: "get"
           }).then(function (res) {
             if (res.code == 200) {
@@ -380,7 +380,7 @@ var _default = {
       };
       console.log(data);
       this.$api({
-        url: "/Place/makePlaceBefore",
+        url: "/Place/makePlaceBeforeNew",
         method: "post",
         data: data
       }).then(function (res) {
@@ -455,7 +455,7 @@ var _default = {
         this.isShow = false;
       }
       this.$api({
-        url: "/Place/siteList?date=" + this.time + "&room=" + this.room + "&place_id=" + this.place_id + "&date_label=" + this.index,
+        url: "/Place/siteListNew?date=" + this.time + "&room=" + this.room + "&place_id=" + this.place_id + "&date_label=" + this.index,
         method: "get"
       }).then(function (res) {
         if (res.code == 200) {
@@ -467,7 +467,7 @@ var _default = {
           });
           setTimeout(function () {
             _this3.$api({
-              url: "/Place/siteList?date=" + _this3.getNowFormatDate() + "&room=" + _this3.room + "&place_id=" + _this3.place_id + "&date_label=" + "1",
+              url: "/Place/siteListNew?date=" + _this3.getNowFormatDate() + "&room=" + _this3.room + "&place_id=" + _this3.place_id + "&date_label=" + "1",
               method: "get"
             }).then(function (res) {
               if (res.code == 200) {
@@ -495,7 +495,7 @@ var _default = {
         3: "星期三",
         4: "星期四",
         5: "星期五",
-        6: "星期六"
+        6: "星期六",
       };
       var date = new Date(tYear + "-" + tMonth + "-" + tDate);
       var weekIndex = date.getDay();
@@ -526,8 +526,12 @@ var _default = {
     dsdd: function dsdd(e) {
       //拼接
       this.data1.splice(0); //请控之前的数据
+      var today = new Date();
+      var currentDay = today.getDay(); // 0 是周日，1 是周一，以此类推
+      var daysUntilSunday = currentDay === 0 ? 0 : -currentDay; // 如果今天是周日，差值为0，否则为负数
+
       for (var i = 0; i < e; i++) {
-        this.data1.push(this.getDay(i)); //-i 代表之前  i代表将来
+        this.data1.push(this.getDay(daysUntilSunday + i)); //-i 代表之前  i代表将来
       }
     }
   },
