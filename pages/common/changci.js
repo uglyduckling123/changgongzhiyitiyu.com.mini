@@ -528,10 +528,10 @@ var _default = {
       this.data1.splice(0); //请控之前的数据
       var today = new Date();
       var currentDay = today.getDay(); // 0 是周日，1 是周一，以此类推
-      var daysUntilSunday = currentDay === 0 ? 0 : -currentDay; // 如果今天是周日，差值为0，否则为负数
+      var daysUntilSunday = currentDay === 0 ? -6 : (1 - currentDay);// 计算到本周一的偏移天数
       var user_info = uni.getStorageSync("user");
       if(user_info.member_type == 2){
-        e = e+1;
+        e = e+7;
       }
       for (var i = 0; i < e; i++) {
         this.data1.push(this.getDay(daysUntilSunday + i)); //-i 代表之前  i代表将来

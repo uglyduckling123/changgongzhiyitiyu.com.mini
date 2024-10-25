@@ -413,10 +413,10 @@ var _default = (_data$created$methods = {
       this.data1.splice(0); //请控之前的数据
       var today = new Date();
       var currentDay = today.getDay(); // 0 是周日，1 是周一，以此类推
-      var daysUntilSunday = currentDay === 0 ? 0 : -currentDay; // 如果今天是周日，差值为0，否则为负数
+      var daysUntilSunday = currentDay === 0 ? -6 : (1 - currentDay);//计算到本周一的偏移天数
 
-      for (var i = currentDay; i < e; i++) {
-        this.data1.push(this.getDay(daysUntilSunday + i)); //-i 代表之前  i代表将来
+      for (var i = 0; i <= e-currentDay; i++) {
+        this.data1.push(this.getDay(i)); //-i 代表之前  i代表将来
       }
     }
   },
