@@ -533,8 +533,8 @@ var _default = {
       if(user_info.member_type == 2){
         e = e+7;
       }
-      for (var i = 0; i < e; i++) {
-        this.data1.push(this.getDay(daysUntilSunday + i)); //-i 代表之前  i代表将来
+      for (var i = 0; i <= e-currentDay; i++) {
+        this.data1.push(this.getDay(i)); //-i 代表之前  i代表将来
       }
     }
   },
