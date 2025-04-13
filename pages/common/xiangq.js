@@ -265,7 +265,7 @@ var _default = (_data$created$methods = {
           duration: 2000
         });
         return;
-      } else if (this.address == "") {
+      } /*else if (this.address == "") {
         uni.showToast({
           title: "社区不能为空！",
           icon: "error",
@@ -279,7 +279,7 @@ var _default = (_data$created$methods = {
           duration: 2000
         });
         return;
-      }
+      }*/
       var phoneReg = /(^1\d{10}$)|(^[0-9]\d{7}$)/;
       if (!phoneReg.test(this.mobile)) {
         uni.showToast({
@@ -289,7 +289,7 @@ var _default = (_data$created$methods = {
         });
         return;
       }
-      var idCardPattern = /^(?:\d{15}|\d{17}[\dX])$/;
+      /*var idCardPattern = /^(?:\d{15}|\d{17}[\dX])$/;
       if (!idCardPattern.test(this.identification)) {
         uni.showToast({
           title: "身份证格式不正确！",
@@ -297,7 +297,7 @@ var _default = (_data$created$methods = {
           duration: 2000
         });
         return;
-      }
+      }*/
 
       var obj = {
         user_name: this.user_name,
